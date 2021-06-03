@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <string.h>
+#include <bsd/string.h>
 #include "libft/libft.h"
 
 int main(void)
@@ -137,7 +138,22 @@ int main(void)
 	if(libft_len == libc_len)
 		ft_putstr_fd("| OK ", 1);
 	else
-		ft_putstr_fd("| Something went wrong", 1);
+		ft_putstr_fd("| NOK ", 1);
+	ft_putstr_fd("|\n", 1);
+
+	/************* ft_strlcpy ****************************/
+	char *src = "good bye";
+	size_t size = 9;
+	char dest[size];
+	
+	size_t libft_strl = ft_strlcpy(dest, src, size);
+	size_t libc_strl = strlcpy(dest, src, 4);
+
+	ft_putstr_fd("ft_strlcpy: ", 1);
+	if (libft_strl == libc_strl)
+		ft_putstr_fd("| OK ", 1);
+	else
+		ft_putstr_fd("| NOK ", 1);
 	ft_putstr_fd("|\n", 1);
 
     return (0);

@@ -25,7 +25,7 @@ $(LIB42):	./$(DIR)/Makefile
 			$(CC) -c $(CFLAGS) $<
 
 $(BIN):		$(OBJ) $(DIR)
-			$(CC) -o $@ $< $(DIR)/$(LIB42)
+			$(CC) -lbsd -o $@ $< $(DIR)/$(LIB42)
 			@echo "Done :D"
 
 clean:		
