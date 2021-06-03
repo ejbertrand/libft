@@ -11,7 +11,7 @@ LIB42 = libft.a
 SRC := test.c
 
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Werror
 
 OBJ := $(SRC:%.c=%.o)
 BIN := $(SRC:%.c=%)

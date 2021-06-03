@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <string.h>
 #include "libft/libft.h"
 
 int main(void)
@@ -112,7 +113,7 @@ int main(void)
     }
     ft_putstr_fd("|\n", 1);
 
-		/************* ft_tolower ****************************/
+	/************* ft_tolower ****************************/
 	int lower_array[] = { 'A', 'f', 'G', 'Z', 'l'};
     int lower_counter = -1;
 
@@ -127,6 +128,17 @@ int main(void)
             ft_putstr_fd("| NOK ", 1);
     }
     ft_putstr_fd("|\n", 1);
+
+	/************* ft_strlen ****************************/
+	size_t	libft_len = ft_strlen("This is the size of my string");
+	size_t	libc_len = strlen("This is the size of my string");
+
+	ft_putstr_fd("ft_strlen:  ", 1);
+	if(libft_len == libc_len)
+		ft_putstr_fd("| OK ", 1);
+	else
+		ft_putstr_fd("| Something went wrong", 1);
+	ft_putstr_fd("|\n", 1);
 
     return (0);
 }
