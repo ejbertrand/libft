@@ -26,7 +26,7 @@ $(LIB42):	./$(DIR)/Makefile
 
 $(BIN):		$(OBJ) $(DIR)
 			$(CC) -lbsd -o $@ $< $(DIR)/$(LIB42)
-			@echo "Done :D"
+			@echo "Done ;)"
 
 clean:		
 			rm -fv *.o $(BIN)
@@ -38,3 +38,4 @@ re:			fclean all
 
 debug:		$(SRC) $(DIR)
 			$(CC) -g $(CFLAGS) $(SRC) $(DIR)/*.c -lbsd -o debug
+			@echo "Ready to debug ;)"
