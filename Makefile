@@ -37,4 +37,4 @@ fclean:		clean
 re:			fclean all
 
 debug:		$(SRC) $(DIR)
-			$(CC) -g $(CFLAGS) $(SRC) $(DIR)/*.c -o debug
+			$(CC) -g $(CFLAGS) $(SRC) $(DIR)/*.c -lbsd -o debug

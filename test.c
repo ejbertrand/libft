@@ -142,15 +142,30 @@ int main(void)
 	ft_putstr_fd("|\n", 1);
 
 	/************* ft_strlcpy ****************************/
-	char *src = "good bye";
-	size_t size = 9;
-	char dest[size];
+	char *lcpy_src = "good bye";
+	size_t lcpy_size = 9;
+	char lcpy_dest[lcpy_size];
 	
-	size_t libft_strl = ft_strlcpy(dest, src, size);
-	size_t libc_strl = strlcpy(dest, src, 4);
+	size_t libft_lcpy = ft_strlcpy(lcpy_dest, lcpy_src, lcpy_size);
+	size_t libc_lcpy = strlcpy(lcpy_dest, lcpy_src, 4);
 
 	ft_putstr_fd("ft_strlcpy: ", 1);
-	if (libft_strl == libc_strl)
+	if (libft_lcpy == libc_lcpy)
+		ft_putstr_fd("| OK ", 1);
+	else
+		ft_putstr_fd("| NOK ", 1);
+	ft_putstr_fd("|\n", 1);
+
+	/************* ft_strlcat ****************************/
+	char *lcat_src = "good bye";
+	size_t lcat_size = 9;
+	char lcat_dst[] = "hello";
+	
+	size_t libft_lcat = ft_strlcpy(lcat_dst, lcat_src, lcat_size);
+	size_t libc_lcat = strlcpy(lcat_dst, lcat_src, 4);
+
+	ft_putstr_fd("ft_strlcat: ", 1);
+	if (libft_lcat == libc_lcat)
 		ft_putstr_fd("| OK ", 1);
 	else
 		ft_putstr_fd("| NOK ", 1);
