@@ -190,5 +190,24 @@ int main(void)
 	}
 	ft_putstr_fd("|\n", 1);
 
+	/************* ft_strrchr ****************************/
+	const char *strrchr_test = "abcdefghiabcdefghiabcdefghi";
+	char strrchr_chars[] = {'a', 'd', 'h', '\0', '%', 'e'};
+	char *libft_ptrr;
+	char *libc_ptrr;
+
+	int strrchr_counter = -1;
+	ft_putstr_fd("ft_strrchr: ", 1);
+	while (++strrchr_counter < 6)
+	{
+		libft_ptrr = ft_strrchr(strrchr_test, strrchr_chars[strrchr_counter]);
+		libc_ptrr = strrchr(strrchr_test, strrchr_chars[strrchr_counter]);
+        if (libft_ptrr == libc_ptrr)
+            ft_putstr_fd("| OK ", 1);
+        else
+            ft_putstr_fd("| NOK ", 1);
+	}
+	ft_putstr_fd("|\n", 1);
+
     return (0);
 }
