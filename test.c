@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <string.h>
+#include <stdio.h>
 #include <bsd/string.h>
 #include "libft/libft.h"
 
@@ -207,6 +208,42 @@ int main(void)
         else
             ft_putstr_fd("| NOK ", 1);
 	}
+	ft_putstr_fd("|\n", 1);
+
+	/************* ft_strnstr ****************************/
+	const char *big = "My bird is big";
+	const char *big2 = "My bird is big";
+	const char *little = "bird";
+	const char *little2 = "bird";
+	size_t size = 8;
+
+	char * libft_strnstr = ft_strnstr(big, little, size);
+	char * libc_strnstr = strnstr(big2, little2, size);
+	ft_putstr_fd("ft_strnstr:\n", 1);
+	printf("\t%s\n", libft_strnstr);
+	printf("\t%s\n", libc_strnstr);
+
+	/************* ft_strncmp ****************************/
+	int libft_comp1 = ft_strncmp("this is my string", "this is another string", 8);
+	int libc_comp1 = strncmp("this is my string", "this is another string", 8);
+	int libft_comp2 = ft_strncmp("this should be", "wrong", 5);
+	int libc_comp2 = strncmp("this should be", "wrong", 5);
+	int libft_comp3 = ft_strncmp("this should be", "wrong", 0);
+	int libc_comp3 = strncmp("this should be", "wrong", 0);
+
+	ft_putstr_fd("ft_strncmp: ", 1);
+	if (libft_comp1 == libc_comp1)
+            ft_putstr_fd("| OK ", 1);
+    else
+            ft_putstr_fd("| NOK ", 1);
+	if (libft_comp2 == libc_comp2)
+            ft_putstr_fd("| OK ", 1);
+    else
+            ft_putstr_fd("| NOK ", 1);
+	if (libft_comp3 == libc_comp3)
+            ft_putstr_fd("| OK ", 1);
+    else
+            ft_putstr_fd("| NOK ", 1);
 	ft_putstr_fd("|\n", 1);
 
     return (0);
