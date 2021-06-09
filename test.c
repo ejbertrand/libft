@@ -246,5 +246,9 @@ int main(void)
             ft_putstr_fd("| NOK ", 1);
 	ft_putstr_fd("|\n", 1);
 
+	/****************** ft_memset ****************/
+
+	/****************** ft_bzero ****************/
+
     return (0);
 }
