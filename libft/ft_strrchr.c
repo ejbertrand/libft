@@ -9,11 +9,11 @@ char	*ft_strrchr(const char *s, int c)
 	ptr = NULL;
 	while(s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c % 256)
 			ptr = (char *)&s[i];
 		i++;
 	}
-	if (s[i] == '\0' && s[i] == c)
+	if (s[i] == '\0' && s[i] == c % 256)
 		ptr = (char *)&s[i];
 	return ptr;
 }
