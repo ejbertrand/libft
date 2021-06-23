@@ -6,7 +6,7 @@ char *ft_strdup(const char *s)
 	size_t length;
 
 	length = ft_strlen(s);
-	duplicate = calloc(length + 1, sizeof(char));
+	duplicate = ft_calloc(length + 1, sizeof(char));
 	if (duplicate == NULL)
 		return NULL;
 	duplicate[length] = '\0';

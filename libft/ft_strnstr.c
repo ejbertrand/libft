@@ -18,21 +18,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	const char		*aux_big;
 
 	aux_big = big;
-	aux_little = little;								// Storing the original pointer for little string
-	if (!*little)										// Verifying if little is empty
+	aux_little = little;
+	if (!*little)
 		return ((char *)big);
 	if (len == 0)
 		return (NULL);
-	while (*big != '\0')								// Repeat while big hasn't reached it's end
+	while (*big != '\0')
 	{
-		while ((len-- > 0) && (*big++ == *little++))	// Repeat while big and little coincide (increase +1 each pointer) and length doen't reach 0 (decrease -1 the length)
+		while ((len-- > 0) && (*big++ == *little++))
 		{
-			if (*little == '\0')						// If little reached it's end, return the pointer of big, saved previously.
+			if (*little == '\0')	
 				return ((char *)aux_big);
 		}
 		aux_big++;
 		big = aux_big;
-		little = aux_little;							// Return the pointer of little to it's original position
+		little = aux_little;
 	}
 	return (NULL);
 }

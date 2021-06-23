@@ -5,7 +5,9 @@
 #include "libft/libft.h"
 
 int main(void)
-{
-	printf("\n");
+{	
+	char * str = strdup("1");
+	char * s = ft_substr(str, 42, 42000000);
+	printf("%s\n", s);
     return (0);
 }
