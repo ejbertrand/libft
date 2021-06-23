@@ -4,12 +4,23 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char *aux_src;
 	char *aux_dest;
+	size_t index;
 
 	aux_dest = dest;
 	aux_src = (void *)src;
-	while (n-- > 0)
+	index = 0;
+	if (dest < src)
 	{
-		*aux_dest++ = aux_src[n];
+		while (index < n)
+		{
+			aux_dest[index] = aux_src[index];
+			index++;
+		}
+	}
+	else
+	{
+		while (n-- > 0)
+			aux_dest[n] = aux_src[n];
 	}
 	return (dest);
 }

@@ -12,21 +12,22 @@
 
 int		ft_atoi(const char *str)
 {
-	int i;
 	int nbr;
-	int nbrminus;
+	int sign;
 
-	i = 0;
 	nbr = 0;
-	nbrminus = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
-			nbrminus++;
-	while (str[i] >= '0' && str[i] <= '9')
-		nbr = nbr * 10 + (str[i++] - '0');
-	if (nbrminus % 2 == 1)
-		return (nbr * -1);
-	return (nbr);
+	sign = 1;
+	while (*str <= 32)
+		str++;
+	if (*str == '-'){
+		sign = -1;
+		str++;
+	}
+	else if(*str == '+')
+		str++;
+	if (*str == '-' || *str == '+')
+		return (nbr);
+	while (*str >= '0' && *str <= '9')
+		nbr = nbr * 10 + (*str++ - '0');
+	return (nbr * sign);
 }
