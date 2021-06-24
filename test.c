@@ -6,8 +6,12 @@
 
 int main(void)
 {	
-	char * str = strdup("1");
-	char * s = ft_substr(str, 42, 42000000);
-	printf("%s\n", s);
+	char * * tab = ft_split("tripouille , 42 , huhuhuhu, ffffff, chancho chanchia, fi ", ',');
+	printf("%s\n", tab[0]);
+	printf("%s\n", tab[1]);
+	printf("%s\n", tab[2]);
+	printf("%s\n", tab[3]);
+	printf("%s\n", tab[4]);
+	printf("%s\n", tab[5]);
     return (0);
 }

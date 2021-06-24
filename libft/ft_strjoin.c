@@ -3,14 +3,20 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *joined;
-	size_t joined_len;
+	char *joined_index;	
+	size_t s1_len;
+	size_t s2_len;
 
-	joined_len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	joined = ft_calloc(joined_len, sizeof(char));
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	joined = (char *)ft_calloc(s1_len + s2_len + 1, sizeof(char));
+	joined_index = joined;
 	if (joined == NULL)
 		return (NULL);
-	// while (joined_len > 1)
-	// 	*joined++ =
-	// Return the prefixed string
+	while(s1_len-- > 0)
+		*joined_index++ = *s1++;
+	while(s2_len-- > 0)
+		*joined_index++ = *s2++;
+	*joined_index = '\0';
 	return (joined);
 }
