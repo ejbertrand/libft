@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <bsd/string.h>
-#include "libft/libft.h"
+#include "src/libft.h"
 
 int main(void)
 {	

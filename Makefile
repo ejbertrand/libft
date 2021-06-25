@@ -6,7 +6,7 @@
 
 .PHONY = all clean fclean re debug
 
-DIR = libft
+DIR = src
 LIB42 = libft.a
 SRC := test.c
 
