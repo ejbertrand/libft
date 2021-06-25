@@ -6,7 +6,6 @@
 
 int main(void)
 {	
-	char * s = ft_itoa(INT_MIN);
-	printf("%s\n", s);
+	ft_putnbr_fd(INT_MIN, 1);
     return (0);
 }
