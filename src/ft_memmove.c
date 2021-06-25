@@ -2,9 +2,9 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *aux_src;
-	char *aux_dest;
-	size_t index;
+	char	*aux_src;
+	char	*aux_dest;
+	size_t	index;
 
 	aux_dest = dest;
 	aux_src = (void *)src;

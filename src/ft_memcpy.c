@@ -2,8 +2,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char *aux_dest;
-	char *aux_src;
+	char	*aux_dest;
+	char	*aux_src;
 
 	aux_dest = dest;
 	aux_src = (void *)src;

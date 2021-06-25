@@ -2,7 +2,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *array;
+	char	*array;
 
 	array = s;
 	while (n-- >= 1)

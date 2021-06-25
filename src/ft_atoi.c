@@ -10,20 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int nbr;
-	int sign;
+	int	nbr;
+	int	sign;
 
 	nbr = 0;
 	sign = 1;
 	while (*str <= 32)
 		str++;
-	if (*str == '-'){
+	if (*str == '-')
+	{
 		sign = -1;
 		str++;
 	}
-	else if(*str == '+')
+	else if (*str == '+')
 		str++;
 	if (*str == '-' || *str == '+')
 		return (nbr);
