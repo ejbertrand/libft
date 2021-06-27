@@ -4,38 +4,32 @@
 # make fclean	# remove ALL object files (.o) AND the library (.a)
 # make re		# recompilate
 
-.PHONY = all clean fclean re debug
+.PHONY = all clean fclean re
 
-DIR = src
-LIB42 = libft.a
-SRC := test.c
+NAME = libft.a
+HEADERS = libft.h
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = gcc		# compiler to use
+CFLAGS = -c -Wall -Wextra -Werror
 
-OBJ := $(SRC:%.c=%.o)
-BIN := $(SRC:%.c=%)
+SRCS := $(wildcard *.c)
 
-all: 		$(LIB42) $(BIN)
+OBJS := $(SRCS:%.c=%.o)
 
-$(LIB42):	./$(DIR)/Makefile
-			cd ./$(DIR)/ && $(MAKE)
+all:		$(NAME)
 
-%.o: 		%.c
-			$(CC) -c $(CFLAGS) $<
+$(NAME): 	$(OBJS)
+			ar rcs $@ $^
+			@echo "Library" \'$@\' "created!"
 
-$(BIN):		$(OBJ) $(DIR)
-			$(CC) -lbsd -o $@ $< $(DIR)/$(LIB42)
-			@echo "Done ;)"
+%.o: 		%.c $(HEADERS)
+			$(CC) $(CFLAGS) $<
 
-clean:		
-			rm -fv *.o $(BIN)
+clean:
+			rm -vf *.o
 
-fclean:		clean
-			cd ./$(DIR)/ && $(MAKE) fclean
+fclean: 	clean
+			rm -f $(NAME)
+			@echo "Removed static library" \'$(NAME)\'
 
-re:			fclean all
-
-debug:		$(SRC) $(DIR)
-			$(CC) -g $(CFLAGS) $(SRC) $(DIR)/*.c -lbsd -o debug
-			@echo "Ready to debug ;)"
+re: 		clean all
