@@ -2,28 +2,20 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	alloc_size;
-	size_t	buff_len;
-	char	*index;
-	char	*trimmed;
+	unsigned int	start;
+	size_t			len;
+	char			*trimmed;
 
-	buff_len = ft_strlen(s1) + 1;
-	index = (char *)s1;
-	alloc_size = 0;
-	while (buff_len-- > 0)
-		if (!ft_strchr(set, *index++))
-			alloc_size++;
-	trimmed = (char *)ft_calloc(alloc_size + 1, sizeof(char));
+	start = 0;
+	while (ft_strchr(set, s1[start]))
+		start++;
+	len = ft_strlen(s1);
+	if (start > len)
+		return (ft_calloc(1, sizeof(char)));
+	while (len > 0 && ft_strchr(set, s1[len]))
+		len--;
+	trimmed = ft_substr(s1, start, len - start + 1);
 	if (!trimmed)
-		return (NULL);
-	buff_len = ft_strlen(s1) + 1;
-	index = trimmed;
-	while (buff_len-- > 0)
-	{
-		if (!ft_strchr(set, *s1))
-			*index++ = *s1;
-		s1++;
-	}
-	*index = '\0';
+		return ("");
 	return (trimmed);
 }

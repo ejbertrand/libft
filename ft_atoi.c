@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 
 	nbr = 0;
 	sign = 1;
-	while (*str <= 32)
+	while (*str == 32 || (*str > 8 && *str < 14))
 		str++;
 	if (*str == '-')
 	{
@@ -26,8 +26,6 @@ int	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	if (*str == '-' || *str == '+')
-		return (nbr);
 	while (*str >= '0' && *str <= '9')
 		nbr = nbr * 10 + (*str++ - '0');
 	return (nbr * sign);
