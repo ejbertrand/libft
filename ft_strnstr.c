@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	const char	*aux_little;
 	const char	*aux_big;
-	char *end;
+	char		*end;
 
 	if (!*little)
 		return ((char *) big);
@@ -31,10 +31,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (*big != '\0' && big <= end)
 	{
 		while ((big <= end) && (*big++ == *little++))
-		{
 			if (*little == '\0')
 				return ((char *) aux_big);
-		}
 		aux_big++;
 		big = aux_big;
 		little = aux_little;
