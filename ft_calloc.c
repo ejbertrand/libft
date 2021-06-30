@@ -14,7 +14,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	//if (nmemb == 0 || size == 0 || ft_ovfmul(nmemb, size))
 	if (ft_ovfmul(nmemb, size))
 		return (NULL);
 	if (nmemb == 0)

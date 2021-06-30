@@ -28,10 +28,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		end = (char *)&big[len - 1];
 	else
 		end = (char *)&big[ft_strlen(big) - 1];
-	//while (*big != '\0' && len > 0)
 	while (*big != '\0' && big <= end)
 	{
-		//while ((len-- > 0) && (*big++ == *little++))
 		while ((big <= end) && (*big++ == *little++))
 		{
 			if (*little == '\0')
