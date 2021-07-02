@@ -38,7 +38,6 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 
 	i = 0;
-	j = 0;
 	words = (char **)ft_calloc(wordcount(s, c) + 1, sizeof(char *));
 	if (!words)
 		return (NULL);
@@ -51,8 +50,7 @@ char	**ft_split(char const *s, char c)
 			j = 0;
 			while (wordlen-- > 0)
 				words[i][j++] = *s++;
-			words[i][j] = '\0';
-			i++;
+			words[i++][j] = '\0';
 		}
 		else
 			s++;
