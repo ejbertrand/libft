@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len--;
 	trimmed = ft_substr(s1, start, len - start + 1);
 	if (!trimmed)
-		return ("");
+		return (NULL);
 	else
 		return (trimmed);
 }
