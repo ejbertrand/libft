@@ -40,6 +40,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	words = (char **)ft_calloc(wordcount(s, c) + 1, sizeof(char *));
+	if (!words)
+		return (NULL);
 	while (*s != '\0')
 	{
 		wordlen = strlenwdel((char *)s, c);
