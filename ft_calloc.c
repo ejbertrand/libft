@@ -4,6 +4,8 @@ static int	ft_ovfmul(size_t a, size_t b)
 {
 	int	max_factor;
 
+	if (a == 0 || b == 0)
+		return (0);
 	max_factor = (int) INT_MAX / a;
 	if ((int)b > max_factor)
 		return (-1);
