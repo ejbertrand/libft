@@ -8,6 +8,6 @@ It contains three categories of functions:
 - Memory allocation, initialization and/or manipulation
 
 The library contains a Makefile which produces a static library object (.a) compiled with GCC (GNU Compiler).
-It can be safely downloaded and tested, as it has already been tested against the original function and the results are roughly the same.
+It can be safely downloaded and tested, as it has already been tested against the original function and the results are the same.
 
 Any comments or questions, feel free to contact.
